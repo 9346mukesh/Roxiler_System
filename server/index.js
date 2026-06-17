@@ -4,8 +4,9 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+const initializeDatabase = require("./config/initDatabase");
+
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -14,13 +15,18 @@ app.get("/", (req, res) => {
   res.send("Store Management API Running");
 });
 
-app.get("/health", (req, res) => {
-  res.status(200).json({
-    status: "success",
-    message: "Server is healthy",
-  });
-});
+const startServer = async () => {
+  try {
+    await initializeDatabase();
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+    app.listen(process.env.PORT, () => {
+      console.log(
+        `Server running on http://localhost:${process.env.PORT}`
+      );
+    });
+  } catch (error) {
+    console.error("Server startup stopped because the database is not ready");
+  }
+};
+
+startServer();
