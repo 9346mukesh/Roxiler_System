@@ -1,0 +1,149 @@
+.app-shell {
+  min-height: 100svh;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top left, rgba(23, 162, 184, 0.14), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 193, 7, 0.16), transparent 26%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+.topbar {
+  max-width: 1120px;
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1;
+  color: #0f172a;
+}
+
+.topnav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 10px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+}
+
+.content {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.hero-copy {
+  max-width: 720px;
+}
+
+.badge-soft {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-copy h2 {
+  margin: 18px 0 12px;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.05;
+  color: #0f172a;
+}
+
+.hero-copy p {
+  font-size: 1.05rem;
+  color: #334155;
+}
+
+.stack-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stack-panel {
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.stack-panel h3 {
+  margin: 0 0 14px;
+  color: #0f172a;
+}
+
+.stack-panel ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #334155;
+}
+
+.stack-panel li + li {
+  margin-top: 8px;
+}
+
+.accent-panel {
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  color: #fff;
+}
+
+.accent-panel h3,
+.accent-panel p {
+  color: #fff;
+}
+
+.full-width {
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 20px;
+  }
+
+  .topbar,
+  .stack-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .topbar {
+    align-items: start;
+  }
+}
